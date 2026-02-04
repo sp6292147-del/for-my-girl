@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Will You Be My Valentine Runchi Mayalu?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1; /* Soft Rose */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #adb5bd;
+            color: white;
+            position: absolute; 
+        }
+
+        .success-msg {
+            display: none;
+            color: #d63384;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="main-content">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwa3V4eHptbmR6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ohze3kG5qO9DcTUFM/giphy.gif" alt="Cute Heart">
+            <h1>Will you be my Valentine Runchi Mayalu? ❤️</h1>
+            <div class="buttons">
+                <button id="yesBtn" onclick="celebrate()">Yes!</button>
+                <button id="noBtn" onmouseover="moveButton()">No</button>
+            </div>
+        </div>
+
+        <div id="success" class="success-msg">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwa3V4eHptbmR6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/26hpv6mE5vMv2S6vO/giphy.gif" alt="Happy Dance">
+            <p>Yay! See you on the 14th! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        function moveButton()
+        {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+            document.body.style.backgroundColor = '#ff85a1';
+        }
+    </script>
+</body>
+</html>
+
